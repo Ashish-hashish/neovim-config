@@ -1,0 +1,16 @@
+-- toggle-term
+-- https://github.com/akinsho/toggleterm.nvim
+vim.pack.add { "https://github.com/akinsho/toggleterm.nvim" } 
+require("toggleterm").setup{
+	open_mapping = [[<c-\>]],
+	direction = "float",
+	float_opts = {
+		border = "curved",
+		width = math.floor(vim.o.columns),
+		height = math.floor(vim.o.lines * 0.3),
+		row = vim.o.lines - math.floor(vim.o.lines * 0.3) - 1, 
+                col = math.floor((vim.o.columns - math.floor(vim.o.columns * 0.8)) / 2),
+		focusable = false
+	},
+  	shade_terminals = false,
+}
